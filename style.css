@@ -1,0 +1,852 @@
+ *{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+ body{
+    overflow:auto;
+    font-family:Arial, Helvetica, sans-serif;
+    background:radial-gradient(circle,#0d1b2a,#000);
+}
+
+ #universo{
+    width:100vw;
+    min-height:100vh;
+    position:relative;
+    overflow:hidden;
+}
+
+.estrella{
+    position:absolute;
+    background:white;
+    border-radius:50%;
+    animation:parpadear 2s infinite;
+}
+
+@keyframes parpadear{
+
+    0%{opacity:.2;}
+
+    50%{opacity:1;}
+
+    100%{opacity:.2;}
+
+}
+
+#estrellaPrincipal{
+
+    position:absolute;
+
+    width:14px;
+    height:14px;
+
+    left:50%;
+    top:45%;
+
+    transform:translate(-50%,-50%);
+
+    border-radius:50%;
+
+    background:#6CFF6C;
+
+    box-shadow:
+    0 0 20px #6CFF6C,
+    0 0 50px #6CFF6C;
+
+    animation:latido 2s infinite;
+
+}
+
+@keyframes latido{
+
+    0%{transform:translate(-50%,-50%) scale(1);}
+
+    50%{transform:translate(-50%,-50%) scale(1.5);}
+
+    100%{transform:translate(-50%,-50%) scale(1);}
+
+}
+
+#titulo{
+    animation:
+    aparecer 3s ease,
+    respirar 3s infinite;
+
+    position:absolute;
+
+    width:100%;
+
+    top:90px;
+
+    text-align:center;
+
+    color:white;
+
+    font-size:60px;
+
+    text-shadow:
+    0 0 10px #4CAF50,
+    0 0 20px #4CAF50;
+
+    transition:1s;
+
+}
+@keyframes respirar{
+
+    0%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.03);
+    }
+
+    100%{
+        transform:scale(1);
+    }
+
+}
+#btnCarta{
+
+    display:none;
+
+    position:absolute;
+
+    left:50%;
+
+    bottom:120px;
+
+    transform:translateX(-50%);
+
+    padding:15px 30px;
+
+    border:none;
+
+    border-radius:30px;
+
+    background:#4CAF50;
+
+    color:white;
+
+    cursor:pointer;
+
+    font-size:20px;
+
+    box-shadow:0 0 20px #4CAF50;
+
+}
+
+  #sobre{
+
+    display:none;
+
+    position:absolute;
+
+    left:50%;
+    top:50%;
+
+    transform:translate(-50%,-50%);
+
+    width:500px;
+
+    max-width:90%;
+
+    max-height:70vh;
+
+    overflow-y:auto;
+
+    background:white;
+
+    border-radius:20px;
+
+    padding:35px;
+
+    padding-bottom:90px;
+
+    z-index:100;
+
+    box-shadow:
+        0 0 30px rgba(255,255,255,.3),
+        0 0 80px rgba(76,175,80,.25);
+
+    animation:abrirCarta .9s ease;
+}
+/* ========================================
+   💚 TÍTULO FINAL
+======================================== */
+
+.tituloFinal{
+
+    position:absolute !important;
+
+    top:70px !important;
+
+    left:50% !important;
+
+    transform:
+        translateX(-50%) !important;
+
+    width:100% !important;
+
+    text-align:center !important;
+
+    font-size:65px !important;
+
+    color:white;
+
+    z-index:120;
+
+    text-shadow:
+
+        0 0 10px #4CAF50,
+
+        0 0 25px #4CAF50,
+
+        0 0 50px rgba(76,175,80,.7);
+
+    animation:
+
+        tituloFinalEntrada 2s ease;
+
+}
+
+
+@keyframes tituloFinalEntrada{
+
+    from{
+
+        opacity:0;
+
+        transform:
+            translateX(-50%)
+            translateY(-30px)
+            scale(.7);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+            translateX(-50%)
+            translateY(0)
+            scale(1);
+
+    }
+
+}
+
+#carta{
+
+    color:#333;
+
+    text-align:center;
+
+}
+
+#carta h2{
+
+    color:#4CAF50;
+
+    margin-bottom:20px;
+
+}
+
+#textoCarta{
+
+    line-height:1.8;
+
+}
+
+.girasol{
+
+    position:absolute;
+
+    top:-50px;
+
+    z-index:2;
+
+    animation:girar 6s linear infinite;
+
+}
+
+@keyframes girar{
+
+    from{transform:rotate(0deg);}
+
+    to{transform:rotate(360deg);}
+
+}
+/* ========================================
+   🌠 ESTRELLAS FUGACES
+======================================== */
+
+.estrellaFugaz {
+
+    position: absolute;
+
+    width: 5px;
+    height: 5px;
+
+    background: white;
+
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 10px white,
+        0 0 20px white,
+        -80px 20px 20px rgba(255,255,255,.5);
+
+    z-index: 5;
+}
+
+
+/* ========================================
+   🌻 GIRASOLES
+======================================== */
+
+.girasol {
+
+    position: absolute;
+
+    top: -60px;
+
+    z-index: 4;
+
+    user-select: none;
+
+    filter:
+        drop-shadow(0 0 8px rgba(255,220,50,.5));
+
+    animation:
+        girarGirasol 6s linear infinite;
+
+}
+
+
+@keyframes girarGirasol {
+
+    from {
+
+        transform: rotate(0deg);
+
+    }
+
+    to {
+
+        transform: rotate(360deg);
+
+    }
+
+}
+
+
+/* ========================================
+   🌻 BOTÓN FINAL
+======================================== */
+
+#botonFinal {
+
+    position: absolute;
+
+    left: 50%;
+
+    bottom: 35px;
+
+    transform: translateX(-50%);
+
+    padding: 15px 28px;
+
+    border: none;
+
+    border-radius: 30px;
+
+    background: #4CAF50;
+
+    color: white;
+
+    font-size: 18px;
+
+    cursor: pointer;
+
+    z-index: 150;
+
+    box-shadow:
+        0 0 15px #4CAF50,
+        0 0 30px rgba(76,175,80,.5);
+
+    animation: aparecerBoton 1s ease;
+
+}
+
+
+@keyframes aparecerBoton {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateX(-50%)
+            scale(.5);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateX(-50%)
+            scale(1);
+
+    }
+
+}
+
+
+/* ========================================
+   ❤️ FINAL
+======================================== */
+
+#final {
+
+    position: absolute;
+
+    top: 50%;
+
+    left: 50%;
+
+    transform:
+        translate(-50%,-50%);
+
+    width: 90%;
+
+    max-width: 600px;
+
+    text-align: center;
+
+    color: white;
+
+    z-index: 100;
+
+    animation: aparecerFinal 2s ease;
+
+}
+
+
+#final h2 {
+
+    font-size: 32px;
+
+    line-height: 1.4;
+
+    text-shadow:
+        0 0 10px #4CAF50,
+        0 0 25px #4CAF50;
+
+}
+
+
+#final p {
+
+    margin-top: 20px;
+
+    font-size: 20px;
+
+    line-height: 1.6;
+
+}
+
+
+.corazon {
+
+    font-size: 80px;
+
+    animation:
+        latirCorazon 1.2s infinite;
+
+}
+
+
+@keyframes latirCorazon {
+
+    0% {
+
+        transform: scale(1);
+
+    }
+
+    50% {
+
+        transform: scale(1.25);
+
+    }
+
+    100% {
+
+        transform: scale(1);
+
+    }
+
+}
+
+
+@keyframes aparecerFinal {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translate(-50%,-50%)
+            scale(.5);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translate(-50%,-50%)
+            scale(1);
+
+    }
+
+}
+
+
+/* ========================================
+   💚 CORAZONES FLOTANTES
+======================================== */
+
+.corazonFlotante {
+
+    position: absolute;
+
+    bottom: -50px;
+
+    font-size: 25px;
+
+    z-index: 200;
+
+    animation:
+        subirCorazon 5s linear forwards;
+
+}
+
+
+@keyframes subirCorazon {
+
+    0% {
+
+        transform:
+            translateY(0)
+            rotate(0deg);
+
+        opacity: 1;
+
+    }
+
+    100% {
+
+        transform:
+            translateY(-110vh)
+            rotate(360deg);
+
+        opacity: 0;
+
+    }
+
+}
+@keyframes abrirCarta{
+
+    from{
+
+        opacity:0;
+
+        transform:
+            translate(-50%,-50%)
+            scale(.5)
+            rotate(-3deg);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+            translate(-50%,-50%)
+            scale(1)
+            rotate(0deg);
+
+    }
+
+}
+/* ========================================
+   💚 TÍTULO FINAL
+======================================== */
+
+.tituloFinal{
+
+    position:absolute !important;
+
+    top:70px !important;
+
+    left:50% !important;
+
+    transform:
+        translateX(-50%) !important;
+
+    width:100% !important;
+
+    text-align:center !important;
+
+    font-size:65px !important;
+
+    color:white;
+
+    z-index:120;
+
+    text-shadow:
+
+        0 0 10px #4CAF50,
+
+        0 0 25px #4CAF50,
+
+        0 0 50px rgba(76,175,80,.7);
+
+    animation:
+
+        tituloFinalEntrada 2s ease;
+
+}
+
+
+@keyframes tituloFinalEntrada{
+
+    from{
+
+        opacity:0;
+
+        transform:
+            translateX(-50%)
+            translateY(-30px)
+            scale(.7);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+            translateX(-50%)
+            translateY(0)
+            scale(1);
+
+    }
+
+}
+/* ========================================
+   💚 TÍTULO FINAL
+======================================== */
+
+.tituloFinal{
+
+    position:absolute !important;
+
+    top:70px !important;
+
+    left:50% !important;
+
+    transform:
+        translateX(-50%) !important;
+
+    width:100% !important;
+
+    text-align:center !important;
+
+    font-size:65px !important;
+
+    color:white;
+
+    z-index:120;
+
+    text-shadow:
+
+        0 0 10px #4CAF50,
+
+        0 0 25px #4CAF50,
+
+        0 0 50px rgba(76,175,80,.7);
+
+    animation:
+
+        tituloFinalEntrada 2s ease;
+
+}
+
+
+@keyframes tituloFinalEntrada{
+
+    from{
+
+        opacity:0;
+
+        transform:
+            translateX(-50%)
+            translateY(-30px)
+            scale(.7);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+            translateX(-50%)
+            translateY(0)
+            scale(1);
+
+    }
+
+}
+ /* ========================================
+   💚 TÍTULO FINAL
+======================================== */
+
+.tituloFinal{
+
+    position:absolute !important;
+
+    top:70px !important;
+
+    left:50% !important;
+
+    transform:
+        translateX(-50%) !important;
+
+    width:100% !important;
+
+    text-align:center !important;
+
+    font-size:65px !important;
+
+    color:white;
+
+    z-index:120;
+
+    text-shadow:
+
+        0 0 10px #4CAF50,
+
+        0 0 25px #4CAF50,
+
+        0 0 50px rgba(76,175,80,.7);
+
+    animation:
+
+        tituloFinalEntrada 2s ease;
+
+}
+
+
+@keyframes tituloFinalEntrada{
+
+    from{
+
+        opacity:0;
+
+        transform:
+            translateX(-50%)
+            translateY(-30px)
+            scale(.7);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+            translateX(-50%)
+            translateY(0)
+            scale(1);
+
+    }
+
+}
+/* ========================================
+   📱 CELULAR
+======================================== */
+
+@media (max-width:600px){
+
+    #titulo{
+
+        font-size:38px;
+
+        top:80px;
+
+        padding:0 15px;
+
+    }
+
+
+     #sobre{
+
+    width:90%;
+
+    max-height:65vh;
+
+    padding:25px;
+
+    padding-bottom:80px;
+
+}
+
+    #carta h2{
+
+        font-size:24px;
+
+    }
+
+
+    #textoCarta{
+
+        font-size:16px;
+
+        line-height:1.7;
+
+    }
+
+
+    .tituloFinal{
+
+        font-size:40px !important;
+
+        top:60px !important;
+
+    }
+
+
+    #final h2{
+
+        font-size:23px;
+
+    }
+
+
+    #final p{
+
+        font-size:17px;
+
+    }
+
+}
