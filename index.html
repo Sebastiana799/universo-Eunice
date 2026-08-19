@@ -10,7 +10,36 @@
 </head>
 
 <body>
+<!-- =========================================
+     🔐 LOGIN INICIAL
+========================================= -->
 
+<div id="loginInicial">
+
+    <div class="loginCaja">
+
+        <div class="loginCorazon">💚</div>
+
+        <h2>Solo para mi niña</h2>
+
+        <p>Hay algo aquí que solo tú puedes abrir...</p>
+
+        <input
+            type="text"
+            id="fechaInicial"
+            placeholder="DD / MM"
+            maxlength="5"
+        >
+
+        <button onclick="entrarPagina()">
+            Entrar 💚
+        </button>
+
+        <p id="errorInicial"></p>
+
+    </div>
+
+</div>
     <div id="universo">
 
         <!-- Estrella principal -->
@@ -21,7 +50,9 @@
 
         <!-- Botón -->
         <button id="btnCarta">Abrir mi corazón 💚</button>
-
+         <audio id="musica" preload="auto" loop>
+    <source src="musica.mp3" type="audio/mpeg">
+</audio>
         <!-- Sobre -->
         <div id="sobre">
 
@@ -38,8 +69,111 @@
     </div>
 
     <!-- JavaScript -->
-    <script src="script.js"></script>
+     <!-- =========================================
+     🔐 SEGUNDO LOGIN
+========================================= -->
+
+<div id="loginGaleria">
+
+    <div class="loginCaja">
+
+        <div class="loginCorazon">🌻</div>
+
+        <h2>Una última cosa...</h2>
+
+        <p>Si llegaste hasta aquí, sabes qué fecha poner. 💚</p>
+
+        <input
+            type="text"
+            id="fechaGaleria"
+            placeholder="DD / MM"
+            maxlength="5"
+        >
+
+        <button onclick="entrarGaleria()">
+            Abrir mi galería 📸
+        </button>
+
+        <p id="errorGaleria"></p>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================
+     📸 GALERÍA
+========================================= -->
+
+<!-- =========================================
+     📸 GALERÍA
+========================================= -->
+
+<div id="galeria">
+
+    <h1>Mis recuerdos contigo 💚</h1>
+
+    <p class="subtituloGaleria">
+        Algunas cosas que quiero guardar contigo... 🌻
+    </p>
+
+    <div class="fotos">
+
+        <div class="foto" onclick="abrirFoto('fotos/foto1.jpg', ' Nuestro recuerdo, NUESTRA PRIMERA FOTO 🌻💚 🌻')">
+
+            <img src="fotos/foto1.jpg" alt="Nuestro recuerdo, NUESTRA PRIMERA FOTO">
+
+            <p>
+             NUESTRA PRIMERA FOTO 🌻💚 🌻
+            </p>
+
+        </div>
+
+
+        <div class="foto" onclick="abrirFoto('fotos/foto2.jpg', 'Mi flaca 🌻')">
+
+            <img src="fotos/foto2.jpg" alt="Mi flaca">
+
+            <p>
+                Mi flaca 🌻
+            </p>
+
+        </div>
+
+
+        <div class="foto" onclick="abrirFoto('fotos/foto3.jpg', 'Un momento especial ❤️')">
+
+            <img src="fotos/foto3.jpg" alt="Un momento especial">
+
+            <p>
+                Un momento especial ❤️
+            </p>
+
+        </div>
+
+
+        <div class="foto" onclick="abrirFoto('fotos/foto4.jpg', 'Y los que todavía nos faltan... ✨')">
+
+            <img src="fotos/foto4.jpg" alt="Nuestro futuro">
+
+            <p>
+                Y los que todavía nos faltan... ✨
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <p class="finalGaleria">
+
+        Y quiero seguir llenando esta galería contigo. 💚
+
+    </p>
+
+</div>
+
+<script src="script.js"></script>
 
 </body>
-
 </html>

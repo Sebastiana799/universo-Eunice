@@ -136,8 +136,6 @@ function cambiarMensaje() {
 }
 
 
-cambiarMensaje();
-
 
 // ========================================
 // 🌻 GIRASOLES
@@ -199,49 +197,54 @@ const texto =
     document.getElementById("textoCarta");
 
 
-boton.addEventListener("click", () => {
+ boton.addEventListener("click",()=>{
 
-    // Ocultar botón
-    boton.style.display = "none";
+    const musica = document.getElementById("musica");
 
-    // Mostrar carta
-    sobre.style.display = "block";
+    if (musica) {
 
-    // Escribir carta
-    texto.innerHTML = `
+        musica.volume = 0.7;
 
-        Mi niña... 💚<br><br>
+        musica.play()
+            .then(() => {
+                console.log("🎵 Música reproduciéndose");
+            })
+            .catch((error) => {
+                console.log("❌ No se pudo reproducir:", error);
+            });
 
-        Si llegaste hasta aquí,
-        significa que abriste algo que hice
-        especialmente para ti.<br><br>
+    }
 
-        Tal vez esto no sea el regalo
-        más caro del mundo...<br><br>
+    boton.style.display="none";
 
-        Pero cada estrella,
-        cada girasol y cada línea de código
-        está aquí porque pensé en ti. 🌻<br><br>
+    sobre.style.display="block";
 
-        Quería hacerte algo diferente,
-        algo que fuera solamente tuyo.<br><br>
+    textoCarta.innerHTML=`
 
-        Porque tú no eres cualquier persona
-        para mí.<br><br>
+Mi niña...
 
-        Eres mi niña. 💚<br><br>
+Gracias por llegar a mi vida.
 
-        Y aunque a veces te diga Eunice
-        y solo yo pueda llamarte así JAJAJA,
-        sabes perfectamente que eres tú
-        cuando lo digo. 😂💚<br><br>
+Tal vez este no sea el regalo más caro del mundo...
 
-        Con muchísimo cariño...<br><br>
+Pero sí uno en el que puse tiempo, cariño y muchas ganas.
 
-        Sebastián 💚
+Cada línea de código que ves aquí la escribí pensando en ti.
 
-    `;
+Espero que cada vez que mires las estrellas recuerdes que siempre habrá alguien que te quiere muchísimo. TE AMOOOO 💚 MI NIÑA. 
+Te amo con todo mi corazón y espero que este regalo te haga sonreír tanto como tú me haces sonreír a mí. 🌻
+te quiero mucho, mi flaca. 💚
+Eres todo lo que quería y más. Gracias por ser tú, por tu amor y por hacerme sentir tan especial. Eres mi sol en los días nublados y mi refugio en las tormentas. No hay palabras suficientes para expresar lo agradecido que estoy de tenerte en mi vida.
 
+Con mucho cariño...                               
+
+
+
+  ❤️ ❤️ ❤️ SEBASTIAN  ❤️ ❤️ ❤️
+
+`;
+
+ 
 
     // Después de unos segundos
     setTimeout(() => {
@@ -290,11 +293,12 @@ function crearBotonFinal() {
 
 function mostrarFinal() {
 
-    titulo.innerHTML =
-        "Para mi Eunice 💚";
+     titulo.innerHTML =
+    "Para mi Eunice 💚";
 
-    titulo.style.opacity = "1";
+titulo.classList.add("tituloFinal");
 
+titulo.style.opacity = "1";
 
     const final =
         document.createElement("div");
@@ -334,7 +338,7 @@ function mostrarFinal() {
 
             crearCorazon();
 
-        }, i * 300);
+        }, i * 400);
 
     }
 
@@ -368,3 +372,130 @@ function crearCorazon() {
     }, 5000);
 
 }
+ // =========================================
+// 🔐 LOGIN INICIAL
+// =========================================
+
+function entrarPagina(){
+
+    const fecha =
+        document.getElementById("fechaInicial").value
+        .trim();
+
+    if(fecha === "30/06" || fecha === "30-06"){
+
+        document.getElementById("loginInicial").style.display =
+            "none";
+
+        document.getElementById("universo").style.display =
+            "block";
+
+        // Iniciar la historia solamente después de entrar
+        indice = 0;
+        cambiarMensaje();
+
+    }else{
+
+        document.getElementById("errorInicial").innerHTML =
+            "Mmm... esa no es la fecha, mi niña 😏💚";
+
+    }
+
+}
+
+
+// =========================================
+// 🔐 SEGUNDO LOGIN
+// =========================================
+
+function mostrarLoginGaleria(){
+
+    const login =
+        document.getElementById("loginGaleria");
+
+    if(login){
+
+        login.style.display = "flex";
+
+    }
+
+}
+
+
+// =========================================
+// 📸 ENTRAR A LA GALERÍA
+// =========================================
+
+function entrarGaleria(){
+
+    const fecha =
+        document.getElementById("fechaGaleria").value
+        .trim();
+
+    if(fecha === "30/06" || fecha === "30-06"){
+
+        document.getElementById("loginGaleria").style.display =
+            "none";
+
+        document.getElementById("universo").style.display =
+            "none";
+
+        document.getElementById("galeria").style.display =
+            "block";
+
+        window.scrollTo(0,0);
+
+    }else{
+
+        document.getElementById("errorGaleria").innerHTML =
+            "Nope 😏... piensa en nuestra fecha 💚";
+
+    }
+
+}
+
+
+// =========================================
+// 💌 DETECTAR EL FINAL DE LA HISTORIA
+// =========================================
+//
+// Esperamos a que tu #final aparezca.
+// No modificamos tu código existente.
+//
+
+const revisarFinal = setInterval(()=>{
+
+    const final =
+        document.getElementById("final");
+
+    const login =
+        document.getElementById("loginGaleria");
+
+    if(!final || !login){
+
+        return;
+
+    }
+
+    const estilo =
+        window.getComputedStyle(final);
+
+    if(
+        estilo.display !== "none" &&
+        estilo.visibility !== "hidden" &&
+        !final.dataset.loginMostrado
+    ){
+
+        final.dataset.loginMostrado = "true";
+
+        setTimeout(()=>{
+
+            mostrarLoginGaleria();
+
+        },3000);
+
+        clearInterval(revisarFinal);
+
+    }
+
+},1000);

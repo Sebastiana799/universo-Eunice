@@ -687,7 +687,7 @@
 
     animation:
 
-        tituloFinalEntrada 2s ease;
+        tituloFinalEntrada 4s ease;
 
 }
 
@@ -850,3 +850,402 @@
     }
 
 }
+/* =========================================
+   🔐 LOGIN
+========================================= */
+
+#loginInicial,
+#loginGaleria{
+
+    position:fixed;
+
+    inset:0;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #07140d 0%,
+            #02050a 55%,
+            #000 100%
+        );
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:9999;
+
+}
+
+
+#loginGaleria{
+
+    display:none;
+
+}
+
+
+.loginCaja{
+
+    width:380px;
+
+    max-width:85%;
+
+    padding:40px 30px;
+
+    text-align:center;
+
+    border-radius:25px;
+
+    background:rgba(5,20,12,.85);
+
+    border:1px solid rgba(80,255,120,.35);
+
+    box-shadow:
+
+        0 0 30px rgba(50,255,100,.2),
+
+        0 0 80px rgba(50,255,100,.08);
+
+    backdrop-filter:blur(10px);
+
+}
+
+
+.loginCorazon{
+
+    font-size:60px;
+
+    margin-bottom:10px;
+
+    animation:
+
+        latido 1.5s infinite;
+
+}
+
+
+.loginCaja h2{
+
+    color:white;
+
+    font-size:32px;
+
+    margin:10px 0;
+
+    text-shadow:
+
+        0 0 10px #4CAF50,
+
+        0 0 25px #4CAF50;
+
+}
+
+
+.loginCaja p{
+
+    color:#ddd;
+
+    font-size:16px;
+
+    line-height:1.5;
+
+}
+
+
+.loginCaja input{
+
+    width:80%;
+
+    padding:14px;
+
+    margin:20px 0 15px;
+
+    border-radius:12px;
+
+    border:1px solid rgba(76,175,80,.5);
+
+    background:#020704;
+
+    color:white;
+
+    text-align:center;
+
+    font-size:20px;
+
+    outline:none;
+
+}
+
+
+.loginCaja input:focus{
+
+    box-shadow:
+
+        0 0 15px rgba(76,175,80,.5);
+
+}
+
+
+.loginCaja button{
+
+    padding:13px 25px;
+
+    border:none;
+
+    border-radius:15px;
+
+    background:#4CAF50;
+
+    color:white;
+
+    font-size:17px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+
+.loginCaja button:hover{
+
+    transform:scale(1.05);
+
+    box-shadow:
+
+        0 0 20px rgba(76,175,80,.7);
+
+}
+
+
+#errorInicial,
+#errorGaleria{
+
+    color:#ff7777;
+
+    min-height:20px;
+
+}
+
+
+@keyframes latido{
+
+    0%,100%{
+
+        transform:scale(1);
+
+    }
+
+    50%{
+
+        transform:scale(1.15);
+
+    }
+
+}
+
+
+/* =========================================
+   📸 GALERÍA
+========================================= */
+
+#galeria{
+
+    display:none;
+
+    min-height:100vh;
+
+    padding:80px 20px;
+
+    box-sizing:border-box;
+
+    background:
+
+        radial-gradient(
+            circle at center,
+            #07140d,
+            #02050a 60%,
+            #000
+        );
+
+    color:white;
+
+    text-align:center;
+
+}
+
+
+#galeria h1{
+
+    font-size:55px;
+
+    margin-bottom:10px;
+
+    text-shadow:
+
+        0 0 10px #4CAF50,
+
+        0 0 30px #4CAF50;
+
+}
+
+
+.subtituloGaleria{
+
+    font-size:19px;
+
+    color:#ddd;
+
+    margin-bottom:45px;
+
+}
+
+
+.fotos{
+
+    max-width:1100px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:
+
+        repeat(auto-fit,minmax(230px,1fr));
+
+    gap:30px;
+
+}
+
+
+.foto{
+
+    background:rgba(255,255,255,.06);
+
+    border:1px solid rgba(76,175,80,.3);
+
+    border-radius:20px;
+
+    padding:15px;
+
+    transition:.4s;
+
+}
+
+
+.foto:hover{
+
+    transform:translateY(-8px) scale(1.02);
+
+    box-shadow:
+
+        0 0 30px rgba(76,175,80,.25);
+
+}
+
+
+.foto img{
+
+    width:100%;
+
+    height:280px;
+
+    object-fit:cover;
+
+    border-radius:15px;
+
+    display:block;
+
+}
+
+
+.foto p{
+
+    color:white;
+
+    font-size:17px;
+
+    margin:15px 5px 5px;
+
+}
+
+
+.finalGaleria{
+
+    margin-top:60px;
+
+    font-size:22px;
+
+    color:#eee;
+
+}
+
+
+/* =========================================
+   📱 ANDROID
+========================================= */
+
+@media(max-width:600px){
+
+    .loginCaja{
+
+        padding:30px 20px;
+
+    }
+
+
+    .loginCaja h2{
+
+        font-size:26px;
+
+    }
+
+
+    .loginCorazon{
+
+        font-size:50px;
+
+    }
+
+
+    #galeria{
+
+        padding:60px 15px;
+
+    }
+
+
+    #galeria h1{
+
+        font-size:38px;
+
+    }
+
+
+    .subtituloGaleria{
+
+        font-size:16px;
+
+    }
+
+
+    .foto img{
+
+        height:300px;
+
+    }
+
+
+    .finalGaleria{
+
+        font-size:18px;
+
+    }
+
+}
+ 
