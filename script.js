@@ -197,54 +197,49 @@ const texto =
     document.getElementById("textoCarta");
 
 
- boton.addEventListener("click",()=>{
+boton.addEventListener("click", () => {
 
-    const musica = document.getElementById("musica");
+    // Ocultar botón
+    boton.style.display = "none";
 
-    if (musica) {
+    // Mostrar carta
+    sobre.style.display = "block";
 
-        musica.volume = 0.7;
+    // Escribir carta
+    texto.innerHTML = `
 
-        musica.play()
-            .then(() => {
-                console.log("🎵 Música reproduciéndose");
-            })
-            .catch((error) => {
-                console.log("❌ No se pudo reproducir:", error);
-            });
+        Mi niña... 💚<br><br>
 
-    }
+        Si llegaste hasta aquí,
+        significa que abriste algo que hice
+        especialmente para ti.<br><br>
 
-    boton.style.display="none";
+        Tal vez esto no sea el regalo
+        más caro del mundo...<br><br>
 
-    sobre.style.display="block";
+        Pero cada estrella,
+        cada girasol y cada línea de código
+        está aquí porque pensé en ti. 🌻<br><br>
 
-    textoCarta.innerHTML=`
+        Quería hacerte algo diferente,
+        algo que fuera solamente tuyo.<br><br>
 
-Mi niña...
+        Porque tú no eres cualquier persona
+        para mí.<br><br>
 
-Gracias por llegar a mi vida.
+        Eres mi niña. 💚<br><br>
 
-Tal vez este no sea el regalo más caro del mundo...
+        Y aunque a veces te diga Eunice
+        y solo yo pueda llamarte así JAJAJA,
+        sabes perfectamente que eres tú
+        cuando lo digo. 😂💚<br><br>
 
-Pero sí uno en el que puse tiempo, cariño y muchas ganas.
+        Con muchísimo cariño...<br><br>
 
-Cada línea de código que ves aquí la escribí pensando en ti.
+        Sebastián 💚
 
-Espero que cada vez que mires las estrellas recuerdes que siempre habrá alguien que te quiere muchísimo. TE AMOOOO 💚 MI NIÑA. 
-Te amo con todo mi corazón y espero que este regalo te haga sonreír tanto como tú me haces sonreír a mí. 🌻
-te quiero mucho, mi flaca. 💚
-Eres todo lo que quería y más. Gracias por ser tú, por tu amor y por hacerme sentir tan especial. Eres mi sol en los días nublados y mi refugio en las tormentas. No hay palabras suficientes para expresar lo agradecido que estoy de tenerte en mi vida.
+    `;
 
-Con mucho cariño...                               
-
-
-
-  ❤️ ❤️ ❤️ SEBASTIAN  ❤️ ❤️ ❤️
-
-`;
-
- 
 
     // Después de unos segundos
     setTimeout(() => {
@@ -338,7 +333,7 @@ titulo.style.opacity = "1";
 
             crearCorazon();
 
-        }, i * 400);
+        }, i * 300);
 
     }
 

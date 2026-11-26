@@ -1248,4 +1248,42 @@
     }
 
 }
- 
+ #mantenimiento {
+    position: fixed;
+    inset: 0;
+    z-index: 999999;
+    background: #020509;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    color: white;
+    text-align: center;
+}
+
+.mantenimiento-caja {
+    max-width: 450px;
+    padding: 35px 25px;
+    border: 1px solid #557b62;
+    border-radius: 20px;
+    background: #0b1710;
+    box-shadow: 0 0 35px #193c27;
+}
+
+.mantenimiento-caja h1 {
+    color: #e0bd68;
+    font-size: 25px;
+}
+
+.mantenimiento-caja h3 {
+    color: #8dc99b;
+}
+
+.mantenimiento-caja p {
+    line-height: 1.7;
+}
+
+.mantenimiento-caja hr {
+    border-color: #557b62;
+    margin: 25px 0;
+}
